@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logical Thinking University (LTU) - A Definitive Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <style>
+    <style>
         :root {
-            --color-primary-logo-blue: #0A2240; /* Dark Blue - Good for headings on light backgrounds */
-            --color-accent-gold: #B88A3D;
-            --color-accent-reddish: #9A5B4A;
-            --color-bg-cream: #F8F4E9;         /* Light cream background */
-            --color-bg-light-gray: #f9f9f9;    /* Light gray background */
-            --color-white: #FFFFFF;            /* White background / or text on dark backgrounds */
+            /* Color palette based on your logo and ensuring contrast */
+            --color-primary-logo-blue: #0A2240; /* Very Dark Blue - Good for headings on light backgrounds */
+            --color-accent-gold: #B88A3D;      /* Gold - Good for accents, some links */
+            --color-accent-reddish: #9A5B4A;   /* Reddish-brown - For specific accents */
             
-            /* --- TEXT COLOR DEFINITIONS --- */
-            /* Ensure these are dark enough for light backgrounds like white, cream, light-gray */
-            --color-text-dark: #2c3e50;        /* Dark Slate Gray - Good for primary body text */
-            --color-text-medium: #4A5568;     /* Lighter Slate Gray - Good for secondary body text */
-            --color-text-light: #6A737D;      /* Lightest Gray - For less important text, ensure contrast */
+            /* Background Colors */
+            --color-bg-cream: #F8F4E9;         /* Light cream - Primary light background for sections */
+            --color-bg-light-gray: #f9f9f9;    /* Alternate light gray - For section variation */
+            --color-white: #FFFFFF;            /* White - Default body background, card backgrounds */
+            
+            /* Text Colors - Designed for visibility on light backgrounds */
+            --color-text-dark: #2c3e50;        /* Dark Slate Gray - Primary body text */
+            --color-text-medium: #4A5568;     /* Lighter Slate Gray - Paragraphs, secondary text */
+            --color-text-light: #6A737D;      /* Lightest Gray - For minor details, captions (ensure sufficient contrast where used) */
 
+            /* Fonts & Shadows */
             --header-font: 'Merriweather', serif;
             --body-font: 'Roboto', sans-serif;
             --shadow-light: 0 3px 6px rgba(0,0,0,0.06);
@@ -31,10 +34,9 @@
         html { scroll-behavior: smooth; font-size: 16.5px; }
         body {
             font-family: var(--body-font);
-            /* --- APPLYING VISIBLE DEFAULT TEXT COLOR --- */
-            color: var(--color-text-dark); /* Default text color for the page */
+            color: var(--color-text-dark); /* Default dark text */
             line-height: 1.75;
-            background-color: var(--color-white); /* Default background for the page */
+            background-color: var(--color-white); /* Default white background */
             overflow-x: hidden; 
             -webkit-font-smoothing: antialiased; 
             -moz-osx-font-smoothing: grayscale;
@@ -42,8 +44,7 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--header-font);
-            /* Headings use the primary logo blue, which is dark */
-            color: var(--color-primary-logo-blue); 
+            color: var(--color-primary-logo-blue); /* Headings are very dark blue */
             margin-bottom: 0.9em; 
             line-height: 1.35;
         }
@@ -52,11 +53,9 @@
         h3 { font-size: 2.0rem; font-weight: 700;}
         h4 { font-size: 1.6rem; font-weight: 700;}
 
-        /* Paragraphs will inherit the body color (var(--color-text-dark)) by default */
-        /* Or you can be more specific if needed: */
         p { 
             margin-bottom: 1.3em; 
-            color: var(--color-text-medium); /* Using medium dark for paragraphs for slight differentiation */
+            color: var(--color-text-medium); /* Paragraphs are medium dark gray */
         }
         a { color: var(--color-accent-gold); text-decoration: none; transition: color 0.3s ease, opacity 0.3s ease; }
         a:hover { color: var(--color-primary-logo-blue); text-decoration: none; opacity:0.85; }
@@ -66,7 +65,6 @@
         .container-narrow { max-width: 900px; }
 
         section { padding: 90px 0; transition: background-color 0.3s ease; }
-        /* Sections with light backgrounds - text should be visible based on body/p/heading defaults */
         section.bg-cream { background-color: var(--color-bg-cream); }
         section.bg-light-gray { background-color: var(--color-bg-light-gray); }
 
@@ -78,7 +76,7 @@
 
         .btn {
             display: inline-block; padding: 15px 35px;
-            background-color: var(--color-accent-gold); color: var(--color-white) !important; /* Button text is white, on gold BG */
+            background-color: var(--color-accent-gold); color: var(--color-white) !important; /* White text on gold BG */
             font-family: var(--body-font); font-weight: 700; letter-spacing: 0.5px;
             border-radius: 8px; text-decoration: none;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -89,11 +87,11 @@
             transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-dark);
         }
         .btn-secondary {
-            background-color: transparent; color: var(--color-accent-gold) !important; /* Gold text on transparent BG */
+            background-color: transparent; color: var(--color-accent-gold) !important;
             border: 2px solid var(--color-accent-gold);
         }
         .btn-secondary:hover {
-            background-color: var(--color-accent-gold); color: var(--color-white) !important; /* White text on gold BG */
+            background-color: var(--color-accent-gold); color: var(--color-white) !important;
             border-color: var(--color-accent-gold);
         }
 
@@ -113,8 +111,8 @@
 
         .main-nav ul { list-style: none; display: flex; align-items: center; }
         .main-nav li { margin-left: 32px; }
-        .main-nav a { /* Nav links are primary blue on white header BG - should be visible */
-            font-family: var(--body-font); font-weight: 500; color: var(--color-primary-logo-blue);
+        .main-nav a {
+            font-family: var(--body-font); font-weight: 500; color: var(--color-primary-logo-blue); /* Dark blue nav links on white header */
             text-decoration: none; padding: 12px 0; position: relative; font-size: 1.1rem;
         }
         .main-nav a::after {
@@ -141,16 +139,15 @@
         .nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
         .nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
 
-
-        /* Hero Section - Text is white, background is dark image with overlay - THIS IS INTENTIONALLY CONTRASTING */
+        /* Hero Section - White text on dark background image/overlay */
         #home {
             background: linear-gradient(rgba(10, 34, 64, 0.8), rgba(10, 34, 64, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVuaXZlcnNpdHklMjBjYW1wdXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            color: var(--color-white); /* White text here */
+            color: var(--color-white); /* Default text color for hero section */
             text-align: center; padding: 180px 0;
             display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;
         }
         #home h1 {
-            color: var(--color-white); /* Explicitly white for hero H1 */
+            color: var(--color-white); /* Explicit white for H1 */
             font-size: 4rem; margin-bottom: 30px;
             animation: fadeInDown 1.2s ease-out; text-shadow: 3px 3px 6px rgba(0,0,0,0.35);
         }
@@ -158,19 +155,20 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         .taglines { margin-bottom: 40px; animation: fadeInUp 1.2s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards;}
-        .taglines .main-tagline { /* Gold on dark hero, should be visible */
+        .taglines .main-tagline {
             font-family: var(--header-font); font-size: 2.2rem; font-style: italic; margin-bottom: 18px;
-            color: var(--color-accent-gold); font-weight: 700;
+            color: var(--color-accent-gold); /* Gold tagline on dark background */
+            font-weight: 700;
         }
-        .taglines .sub-tagline { font-size: 1.3rem; font-style: italic; opacity: 0.95; } /* Inherits #home white */
-        #home .motto { /* Inherits #home white */
+        .taglines .sub-tagline { font-size: 1.3rem; font-style: italic; opacity: 0.95; } /* Inherits white from #home */
+        #home .motto {
             font-family: var(--body-font); font-size: 1.5rem; font-weight: 500;
             margin-top: 20px; margin-bottom: 45px;
-            animation: fadeInUp 1.2s ease-out 0.8s; opacity: 0; animation-fill-mode: forwards;
+            animation: fadeInUp 1.2s ease-out 0.8s; opacity: 0; animation-fill-mode: forwards; /* Inherits white */
         }
         #home .btn { animation: fadeInUp 1.2s ease-out 1.1s; opacity: 0; animation-fill-mode: forwards; }
 
-        /* About LTU Section - default text colors apply to bg-cream */
+        /* About LTU Section (on bg-cream) - Text will be dark by default */
         #about .about-content { display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         #about .about-text { flex: 2; min-width: 320px; }
         #about .about-image-placeholder {
@@ -178,43 +176,42 @@
             background: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhpc3RvcnklMjBvZiUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60') no-repeat center center/cover;
             border-radius: 12px; box-shadow: var(--shadow-dark); align-self: center;
         }
-        #about .about-text h3 { margin-bottom: 25px; color: var(--color-accent-gold); }
+        #about .about-text h3 { margin-bottom: 25px; color: var(--color-accent-gold); } /* Gold headings in this text block */
         .founders-list { list-style: none; padding-left: 0; columns: 2; gap: 12px; }
-        /* Founders list text color inherits from p or body - should be var(--color-text-medium) or var(--color-text-dark) */
-        .founders-list li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+        .founders-list li { margin-bottom: 10px; color: var(--color-text-medium); position: relative; padding-left: 25px; } /* Medium dark text */
         .founders-list li::before {
             content: "❖"; 
             position: absolute; left: 0; color: var(--color-accent-gold); font-weight: bold; font-size: 1.1em;
         }
-        /* Dean's Welcome - text on dark blue background */
+        /* Dean's Welcome: Light text on dark blue background */
         .deans-welcome {
             background-color: var(--color-primary-logo-blue);
-            color: var(--color-bg-cream); /* Light cream text on dark blue bg */
+            color: var(--color-bg-cream); /* Light text */
             padding: 30px; border-radius: 8px; margin-top: 40px; box-shadow: var(--shadow-medium);
         }
-        .deans-welcome h4 { color: var(--color-accent-gold); } /* Gold heading on dark blue */
-        .deans-welcome p { color: var(--color-bg-cream); opacity: 0.9; } /* Light cream text on dark blue */
+        .deans-welcome h4 { color: var(--color-accent-gold); } /* Gold heading */
+        .deans-welcome p { color: var(--color-bg-cream); opacity: 0.9; } /* Light text */
         .deans-welcome cite { display: block; text-align: right; font-style: italic; margin-top:15px; color:var(--color-accent-gold); }
 
 
-        /* Departments & Programs Section - default text colors apply to default white section background */
-        #departments .featured-program-callout {
+        /* Departments & Programs Section (default white background) - Text will be dark by default */
+        #departments .featured-program-callout { /* On bg-cream */
             background: var(--color-bg-cream); padding: 30px; border-radius: 10px;
             margin-bottom: 50px; text-align: center; box-shadow: var(--shadow-light);
             border-left: 5px solid var(--color-accent-reddish);
         }
-        /* Text inside .featured-program-callout will use default dark text colors on cream background */
         #departments .featured-program-callout h3 { color: var(--color-accent-reddish); }
+        /* P tags in featured-program-callout inherit body's --color-text-medium on cream BG */
 
         .departments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .department-card { /* Cards have white background */
+        .department-card { /* White background */
             background: var(--color-white); padding: 35px; border-radius: 12px;
             box-shadow: var(--shadow-medium);
             transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
             border: 1px solid var(--color-border);
             border-bottom: 5px solid transparent;
         }
-        /* Text inside .department-card will use default dark text colors on white background */
+        /* Headings in card are --color-primary-logo-blue, p text is --color-text-medium */
         .department-card:hover {
             transform: translateY(-10px); box-shadow: var(--shadow-dark);
             border-bottom-color: var(--color-accent-gold);
@@ -222,9 +219,9 @@
         .department-card h3 { color: var(--color-primary-logo-blue); margin-bottom: 15px; font-size:1.7rem; }
         .department-card .head-prof { font-size: 1rem; font-style: italic; color: var(--color-accent-reddish); margin-bottom: 20px; }
         .department-card ul { list-style: none; padding-left: 0; }
-        .department-card ul li { /* List item text color should be var(--color-text-medium) or var(--color-text-dark) */
+        .department-card ul li {
             padding: 10px 0 10px 18px; border-bottom: 1px dotted #e8e8e8;
-            font-size: 1.05rem; position: relative; 
+            font-size: 1.05rem; position: relative; color: var(--color-text-medium); /* Medium dark text for list items */
         }
         .department-card ul li::before {
             content: "»"; position: absolute; left: 0; color: var(--color-accent-gold); font-weight:bold;
@@ -233,35 +230,36 @@
         .department-card ul li small { display: block; font-size: 0.85rem; color: var(--color-text-light); margin-top:3px; }
 
 
-        /* Admission Test Portal Section - Text on dark blue background */
-        #admissions { text-align: center; background-color: var(--color-primary-logo-blue); color: var(--color-white); /* Default text white */ }
-        #admissions .section-title { color: var(--color-white); } /* Title white */
+        /* Admission Test Portal Section - Light text on dark blue background */
+        #admissions { text-align: center; background-color: var(--color-primary-logo-blue); color: var(--color-white); }
+        #admissions .section-title { color: var(--color-white); }
         #admissions .section-title::after { background-color: var(--color-accent-gold); }
-        #admissions p { color: #e8f0fe; font-size: 1.15rem; max-width: 750px; margin-left: auto; margin-right: auto;} /* Light blueish text */
-        #admissions .acceptance-rate { font-size: 2rem; color: var(--color-white); font-weight: 700; margin: 30px 0 40px; } /* White text */
-        #admissions .acceptance-rate span { color: var(--color-accent-gold); font-size: 3.5rem; font-weight: 900; } /* Gold text */
+        #admissions p { color: #e8f0fe; font-size: 1.15rem; max-width: 750px; margin-left: auto; margin-right: auto;}
+        #admissions .acceptance-rate { font-size: 2rem; color: var(--color-white); font-weight: 700; margin: 30px 0 40px; }
+        #admissions .acceptance-rate span { color: var(--color-accent-gold); font-size: 3.5rem; font-weight: 900; }
 
 
-        /* Campus Chronicles (News) Section - default text colors apply to bg-cream */
+        /* Campus Chronicles (News) Section (on bg-cream) - Text will be dark by default */
         .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .news-item { /* Card has white BG, so default dark text colors apply */
+        .news-item { /* White background */
             background: var(--color-white); padding: 30px; border-radius: 10px;
             box-shadow: var(--shadow-medium); transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex; flex-direction: column;
         }
+        /* Text inside news-item is dark by default on white BG */
         .news-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-dark); }
-        .news-item h4 { color: var(--color-accent-gold); margin-bottom: 12px; font-size:1.3rem; } /* Gold heading */
-        .news-item .news-date { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px; display: block; } /* Light gray date */
-        /* News item p tag inherits default dark text color */
+        .news-item h4 { color: var(--color-accent-gold); margin-bottom: 12px; font-size:1.3rem; }
+        .news-item .news-date { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px; display: block; }
+        .news-item p { font-size: 1rem; margin-bottom: 15px; flex-grow:1; color: var(--color-text-medium); } /* Explicit medium dark */
         .news-item .read-more { color:var(--color-accent-reddish); font-weight:bold; align-self:flex-start; }
 
 
-        /* Future Vision: Our Campus Reimagined - default text colors apply to default white section BG */
+        /* Future Vision (default white background) - Text will be dark by default */
         #future-vision .vision-content {
             display: flex; flex-wrap: wrap; gap: 40px; align-items: center;
         }
         #future-vision .vision-text { flex: 1; min-width: 300px; }
-        #future-vision .model-placeholder { /* This has a background image, text on it is white */
+        #future-vision .model-placeholder { /* White text on dark image */
             flex: 1; min-width: 300px; height: 400px;
             background: var(--color-bg-light-gray) url('https://images.unsplash.com/photo-1556103259-7935DBfeb8c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZnV0dXJpc3RpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60') no-repeat center center/cover;
             border-radius: 12px; box-shadow: var(--shadow-dark);
@@ -271,7 +269,7 @@
         #future-vision .vision-text h3 {color: var(--color-accent-reddish);}
 
 
-        /* Virtual Tour Section - default text colors apply to bg-light-gray */
+        /* Virtual Tour Section (on bg-light-gray) - Text will be dark by default */
         #tour .tour-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -284,35 +282,35 @@
             border: 3px solid var(--color-accent-gold);
         }
         #tour .tour-item .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        #tour .tour-item .tour-caption { /* Caption text is primary blue on light gray BG */
-            text-align: center; font-style: italic; color: var(--color-primary-logo-blue);
+        #tour .tour-item .tour-caption {
+            text-align: center; font-style: italic; color: var(--color-primary-logo-blue); /* Dark blue caption */
             font-weight: 500; font-size:1.1rem;
         }
 
 
-        /* Testimonials Section - default text colors apply to bg-cream */
+        /* Testimonials Section (on bg-cream) - Text will be dark by default on card's white BG */
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
-        .testimonial-card { /* Card has white BG, so default dark text colors apply */
+        .testimonial-card { /* White background */
             background: var(--color-white); padding: 35px;
             border-left: 7px solid var(--color-accent-gold);
             border-radius: 0 12px 12px 0; box-shadow: var(--shadow-dark);
             display:flex; flex-direction:column;
         }
-        .testimonial-card blockquote { /* Blockquote text is explicitly dark */
-            font-style: italic; font-size: 1.2rem; color: var(--color-text-dark);
+        .testimonial-card blockquote {
+            font-style: italic; font-size: 1.2rem; color: var(--color-text-dark); /* Explicit dark text */
             margin-bottom: 25px; line-height: 1.6; flex-grow:1;
         }
         .testimonial-card blockquote::before {
             content: "“"; font-size: 3.5rem; color: var(--color-accent-gold);
             font-family: var(--header-font); margin-right: 8px; line-height: 0.4; vertical-align: -0.25em;
         }
-        .testimonial-card cite { /* Cite text is primary blue */
-            font-weight: 700; color: var(--color-primary-logo-blue);
+        .testimonial-card cite {
+            font-weight: 700; color: var(--color-primary-logo-blue); /* Dark blue cite */
             display: block; text-align: right; font-style: normal; font-size:1.05rem;
         }
 
-        /* Contact Us Section - default text colors apply to default white section BG */
-        #contact .contact-info p { font-size: 1.2rem; margin-bottom: 20px; } /* Inherits body/p color */
+        /* Contact Us Section (default white background) - Text will be dark by default */
+        #contact .contact-info p { font-size: 1.2rem; margin-bottom: 20px; color: var(--color-text-medium); } /* Medium dark text */
         #contact .contact-info strong { color: var(--color-primary-logo-blue); }
         #contact .contact-info a { color: var(--color-accent-gold); font-weight: 500;}
         #contact .contact-info a:hover { color: var(--color-primary-logo-blue); }
@@ -320,14 +318,14 @@
         .contact-icon { margin-right: 12px; color: var(--color-accent-gold); font-weight: bold; font-size:1.2em; }
 
 
-        /* Footer - text on dark blue background */
+        /* Footer - Light text on dark blue background */
         .site-footer {
             background-color: var(--color-primary-logo-blue); 
-            color: var(--color-bg-cream); /* Light cream default text for footer */
+            color: var(--color-bg-cream); /* Default light cream text */
             text-align: center; padding: 60px 0;
         }
-        .site-footer p { margin-bottom: 12px; color: #e0e7ef; font-size: 1rem; } /* Slightly different light for p */
-        .site-footer a { color: var(--color-accent-gold); font-weight:500; } /* Gold links */
+        .site-footer p { margin-bottom: 12px; color: #e0e7ef; font-size: 1rem; } /* Slightly different light text */
+        .site-footer a { color: var(--color-accent-gold); font-weight:500; }
         .site-footer a:hover { color: var(--color-white); }
         .footer-logo { margin-bottom:20px; }
         .footer-logo img { max-height:50px; margin:0 auto; opacity:0.8; }
@@ -395,7 +393,6 @@
     <header class="site-header">
         <div class="container">
             <a href="#home" class="logo-link">
-                <!-- The src path "ltu-logo.png" assumes the image is in the same directory as this index.html file -->
                 <img src="ltu-logo.png" alt="Logical Thinking University Logo" id="logo-image">
             </a>
             <button class="nav-toggle" aria-label="toggle navigation">
@@ -465,18 +462,17 @@
             </div>
         </section>
 
-        <section id="departments" class="fade-in-section">
+        <section id="departments" class="fade-in-section"> <!-- Default white background -->
             <div class="container">
                 <h2 class="section-title">Schools of Unconventional Wisdom</h2>
-                <div class="featured-program-callout">
+                <div class="featured-program-callout"> <!-- bg-cream background -->
                     <h3>Featured Program: Quantum Crystal Coding</h3>
                     <p>Dive into the enigmatic world where computational logic meets mystical resonance. Our School of Technomysticism's flagship program explores algorithms powered by hypothetical quantum crystals, teaching students to debug the universe's source code. (No prior belief in crystals required, but an open mind is essential).</p>
                     <a href="#technomysticism-details" class="btn btn-secondary" style="margin-top:15px;">Learn More</a>
                 </div>
 
                 <div class="departments-grid">
-                    <!-- Existing Schools with potentially more courses -->
-                    <div class="department-card">
+                    <div class="department-card"> <!-- White background -->
                         <h3>School of Logic</h3>
                         <p class="head-prof">Head Prof: Dr. Linus Venn</p>
                         <ul>
@@ -560,8 +556,6 @@
                             <li>The Philosophy of Self-Reference</li>
                         </ul>
                     </div>
-
-                    <!-- NEW SCHOOLS -->
                     <div class="department-card">
                         <h3>School of Quantifiable Ambiguity</h3>
                         <p class="head-prof">Head Prof: Dr. Hazy Metrics</p>
@@ -602,7 +596,7 @@
             </div>
         </section>
 
-        <section id="admissions" class="fade-in-section">
+        <section id="admissions" class="fade-in-section"> <!-- Dark blue background -->
             <div class="container">
                 <h2 class="section-title">Dare to Be Illogically Brilliant</h2>
                 <p>At Logical Thinking University, we seek not the conventional scholar, but the intrepid intellectual explorer. If you find beauty in paradox, solace in ambiguity, and humor in the human condition's delightful absurdity, you may have found your academic home. Our admissions process is designed to identify minds capable of extraordinary leaps of illogic.</p>
@@ -616,7 +610,7 @@
             <div class="container">
                 <h2 class="section-title">Campus Chronicles: The Latest Illogic</h2>
                 <div class="news-grid">
-                    <div class="news-item">
+                    <div class="news-item"> <!-- White background -->
                         <h4>Annual Sisyphus Marathon Sees Record Non-Finishers (Again)</h4>
                         <span class="news-date">May 20, 2025</span>
                         <p>The beloved tradition continued this year, with participants enthusiastically failing to reach the summit. Refreshments were served continuously at the starting line. This year's theme: "The Journey IS The Destination... Especially If There Is No Destination."</p>
@@ -650,7 +644,7 @@
             </div>
         </section>
 
-        <section id="future-vision" class="fade-in-section">
+        <section id="future-vision" class="fade-in-section"> <!-- Default white background -->
             <div class="container">
                 <h2 class="section-title">Future Vision: Our Campus Reimagined</h2>
                 <div class="vision-content">
@@ -662,7 +656,6 @@
                         <p><em>(Full 3D interactive model viewing experience coming soon... or perhaps it was here yesterday?)</em></p>
                     </div>
                     <div class="model-placeholder" aria-label="Conceptual 3D rendering of a futuristic and paradoxical university campus plaza.">
-                        <!-- Text inside placeholder if image doesn't load or if you prefer text: <span>Conceptual 3D Model: Paradox Plaza</span> -->
                     </div>
                 </div>
             </div>
@@ -700,7 +693,7 @@
             <div class="container">
                 <h2 class="section-title">Echoes from the Alumni Abyss</h2>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card"> <!-- White background -->
                         <blockquote>“I cried every day, but in a logical way. My tears formed perfect syllogisms. LTU taught me the catharsis of a well-reasoned emotional breakdown.”</blockquote>
                         <cite>– Lira Loop, Class of 2021, School of Emotions & Recursive Philosophy</cite>
                     </div>
@@ -728,7 +721,7 @@
             </div>
         </section>
 
-        <section id="contact" class="fade-in-section">
+        <section id="contact" class="fade-in-section"> <!-- Default white background -->
             <div class="container contact-details">
                 <h2 class="section-title">Connect with the Conundrum</h2>
                 <p>For inquiries, existential crises, to report a temporal anomaly, discuss the philosophical implications of a perfect cup of tea, or to simply ponder the imponderable with us:</p>
@@ -742,14 +735,14 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer"> <!-- Dark blue background -->
         <div class="container">
             <div class="footer-logo">
                  <img src="ltu-logo.png" alt="LTU Small Logo">
             </div>
             <p>© 134 B.C. - Present (and occasionally Future, Past, and Alternate Timelines), Logical Thinking University.</p>
             <p>All Rights (and Wrongs) Reserved, Reconsidered, Recursed, and Occasionally Rebuffed.</p>
-            <p>Motto: Excellence in Illogical Logic  •  Tagline: "Cogito Ergo Sum"</p>
+            <p>Motto: Excellence in Illogical Logic  •  Tagline: "Cogito Ergo Sum"</p>
             <p><a href="#home">Ascend to the Beginning (Or Is It an End?)</a></p>
         </div>
     </footer>
@@ -767,8 +760,7 @@
 
         const navLinks = document.querySelectorAll('.main-nav a');
         navLinks.forEach(link => {
-            link.addEventListener('click', ()
-            => {
+            link.addEventListener('click', () => { // Corrected arrow function
                 if (body.classList.contains('nav-open')) {
                     body.classList.remove('nav-open');
                 }
@@ -782,16 +774,16 @@
         });
 
         // Fade-in sections on scroll
-        const sectionsToFade = document.querySelectorAll('.fade-in-section'); // Renamed variable
+        const sectionsToFade = document.querySelectorAll('.fade-in-section');
         const observerOptions = { root: null, threshold: 0.1, rootMargin: "0px 0px -60px 0px" };
-        const sectionObserver = new IntersectionObserver((entries, observer) => { // Renamed observer
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);
             });
         }, observerOptions);
-        sectionsToFade.forEach(section => { sectionObserver.observe(section); }); // Use renamed variables
+        sectionsToFade.forEach(section => { sectionObserver.observe(section); });
 
         // Sticky header behavior: add .scrolled class
         let lastScrollTop = 0;
